@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('bikes', function (Blueprint $table) {
             $table->id();
-            $table->string('serial_number')->unique();
-            $table->string('model');
-            $table->float('price_per_hour');
-            $table->integer('status')->default('available');
+            $table->string('serial_number',50)->unique();
+            $table->string('model',255);
+            $table->float('price_per_hour',6.2);
+            $table->integer('status', ['available', 'maintenance', 'retired'])->default('available');
             $table->timestamps()->nullable();
         });
     }
