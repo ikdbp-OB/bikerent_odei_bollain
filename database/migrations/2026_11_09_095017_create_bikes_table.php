@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('serial_number',50)->unique();
             $table->string('model',255);
-            $table->float('price_per_hour',6.2);
-            $table->integer('status', ['available', 'maintenance', 'retired'])->default('available');
-            $table->timestamps()->nullable();
+            $table->decimal('price_per_hour', 6, 2);
+            $table->enum('status', ['available', 'maintenance', 'retired'])->default('available');
+            $table->timestamps();
         });
     }
 
