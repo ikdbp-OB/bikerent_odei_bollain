@@ -23,6 +23,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
+        Bike::destroy(Bike::all());
         Bike::factory(50)->create();
+
+        Booking::destroy(Booking::all());
+        Booking::factory(10)->create();
     }
 }
